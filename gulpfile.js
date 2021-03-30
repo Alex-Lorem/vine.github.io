@@ -61,7 +61,7 @@ task(
 task(
     'copy:svg',
     () => {
-    return src(`${SRC_PATH}/*.svg`).pipe(dest('dist'));
+    return src(`${SRC_PATH}/img/*.svg`).pipe(dest('dist/img'));
 })
 task(
     'copy:fonts',
