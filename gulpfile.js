@@ -76,7 +76,6 @@ task(
         return src(STYLE_LIBS,{allowEmpty:true})
         .pipe(gulpif(env === 'dev',sourcemaps.init()))
         .pipe(concat("main.min.scss"))
-        .pipe(sassGlob())
         .pipe(sass().on("error", sass.logError))
         .pipe(px2rem())
         .pipe(gulpif(env === 'prod',autoprefixer({
@@ -131,8 +130,7 @@ task(
 task('build',
  series(
    'clean',
-   parallel('copy:html', "copy:svg", 'img-convert', "copy:fonts", 'styles', 'scripts'),'server')
+   parallel('copy:html', "copy:svg", 'copy:img', "copy:fonts", 'styles', 'scripts'),'server')
 );
 
-task("default", series("clean", parallel("copy:html", "copy:svg", "img-convert", "copy:fonts", "styles", "scripts"), parallel('watch',"server")));
-
+task("default", series("clean", parallel("copy:html", "copy:svg", "copy:img", "copy:fonts", "styles", "scripts"), parallel('watch',"server")));

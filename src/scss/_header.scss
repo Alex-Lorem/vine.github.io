@@ -1,0 +1,53 @@
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    color: #fff;
+    padding: 0 10px;
+}
+.header__upper{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: 'Mont-500';
+    padding: 30px 0;
+}
+.header__lower{
+    @extend .header__upper;
+    justify-content:inherit;
+    font-family: 'Mont-400';
+    padding: 0;
+}
+.header__item{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff;
+    border-left-style: hidden;
+    padding: 15px 0;
+    width: 25%;
+    text-align: center;
+    &:nth-child(4){
+        border-right-style: hidden;
+    }
+    
+    &:hover{
+        border-color: #99862A;
+        border-left-style: hidden;
+        border-right-style: solid;
+        border-right-color: #fff;
+        &:nth-child(1){
+            border-left-style: solid;
+            border-left-color: #fff;
+        }
+    }
+}
+.adress{
+    &:hover{
+        color:bisque;
+    }
+}
+.phone{
+    @extend .adress;
+}

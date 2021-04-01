@@ -1,0 +1,21 @@
+$tablets:768px;
+$phones:480px;
+$slippers:330px; 
+ 
+
+@mixin tablets {
+    @media screen and (max-width:$tablets){
+        @content;
+    }
+}
+
+@mixin phones {
+    @media screen and (max-width:$phones){
+        @content;
+    }
+}
+@mixin slippers {
+    @media screen and (max-width:$slippers){
+        @content;
+    }
+}

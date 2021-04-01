@@ -1,3 +1,140 @@
+.first {
+  background: url(./img/background.png);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; }
+  .first .button {
+    position: relative;
+    z-index: 10; }
+    .first .button:nth-child(1):hover .button--active-1 {
+      animation-name: icons-anim-2;
+      animation-duration: .4s;
+      right: 0.625rem; }
+    .first .button:nth-child(1) .button--active-1 {
+      transition: all 300ms ease;
+      background: url(./img/menu.ico);
+      width: 1.5625rem;
+      height: 1.5625rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0.8125rem;
+      right: -70px; }
+
+@keyframes icons-anim-2 {
+  0% {
+    right: -70px; }
+  100% {
+    right: 0.625rem; } }
+    .first .button:nth-child(2) {
+      margin-left: 1.875rem; }
+      .first .button:nth-child(2):hover .button--active-2 {
+        animation: icons-anim-1;
+        animation-duration: .4s;
+        left: 0.625rem; }
+      .first .button:nth-child(2) .button--active-2 {
+        transition: all 300ms ease;
+        background: url(./img/favicon.ico);
+        width: 1.875rem;
+        height: 1.875rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 0.625rem;
+        left: -70px; }
+
+@keyframes icons-anim-1 {
+  0% {
+    left: -70px; }
+  100% {
+    left: 0.625rem; } }
+
+.first__wrapper {
+  position: relative;
+  bottom: 5%;
+  max-height: 6.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  @media screen and (max-width: 48em){
+    .first__wrapper {
+      position: absolute; } }
+
+@font-face {
+  font-family: 'Mont-400';
+  src: url("./fonts/Montserrat-Regular.woff2") format("woff2"), url("./fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Mont-500';
+  src: url("./fonts/Montserrat-Medium.woff2") format("woff2"), url("./fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Mont-600';
+  src: url("./fonts/Montserrat-SemiBold.woff2") format("woff2"), url("./fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'PD';
+  src: url("./fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("./fonts/PlayfairDisplay-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  padding: 0 0.625rem; }
+
+.header__upper, .header__lower {
+  display: flex;
+  justify-content: space-between;
+  max-width: 68.75rem;
+  margin: 0 auto;
+  font-family: 'Mont-500';
+  padding: 1.875rem 0; }
+
+.header__lower {
+  justify-content: inherit;
+  font-family: 'Mont-400';
+  padding: 0; }
+
+.header__item {
+  border-style: solid;
+  border-width: 0.0625rem;
+  border-color: #fff;
+  border-left-style: hidden;
+  padding: 0.9375rem 0;
+  width: 25%;
+  text-align: center; }
+  .header__item:nth-child(4) {
+    border-right-style: hidden; }
+  .header__item:hover {
+    border-color: #99862A;
+    border-left-style: hidden;
+    border-right-style: solid;
+    border-right-color: #fff; }
+    .header__item:hover:nth-child(1) {
+      border-left-style: solid;
+      border-left-color: #fff; }
+
+.adress:hover, .phone:hover {
+  color: bisque; }
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +143,33 @@
 
 html {
   font-size: 16px;
-  font-family: "OpenSans-Regular";
+  font-family: "Mont-400";
   overflow-x: hidden; }
+  @media screen and (max-width: 48em){
+    html {
+      font-size: 0.9375rem; } }
+  @media screen and (max-width: 30em){
+    html {
+      font-size: 0.875rem; } }
+
+a {
+  color: #fff; }
+
+section {
+  padding: 0 calc(50% - 42.6875rem); }
+
+.button {
+  background: #99862A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9375rem 1.875rem;
+  font-size: 1rem;
+  color: #fff;
+  font-family: 'Mont-500';
+  text-transform: uppercase;
+  width: 12.8125rem;
+  height: 3.125rem; }
 
 .preloader {
   position: absolute;
@@ -19,7 +181,8 @@ html {
   height: 100vh;
   background: #E6E3C4;
   z-index: 1000;
-  overflow: hidden; }
+  overflow: hidden;
+  font-family: "OpenSans-Regular"; }
 
 .preloader__circle {
   overflow: hidden;
@@ -122,7 +285,7 @@ html {
   0% {
     top: 0; }
   100% {
-    top: -100%; } }
+    top: -120%; } }
 
 .loaded_hiding .preloader {
   display: none; }
