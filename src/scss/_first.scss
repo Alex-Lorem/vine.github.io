@@ -6,16 +6,17 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    background-position: center; 
     .button{
         position: relative;
-        z-index: 10;
+        overflow: hidden;
         &:nth-child(1){
             
             &:hover{
                 .button--active-1{
                     animation-name: icons-anim-2;
                     animation-duration: .4s;
-                    right: 10px;}
+                    right: 6px;}
             }
             .button--active-1{
             
@@ -26,13 +27,13 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 position: absolute;
-                top: 13px;
+                top: 14px;
                 right: -70px;
                 
                 }
             @keyframes icons-anim-2{
                 0%{right: -70px;}
-                100%{right: 10px;}
+                100%{right: 6px;}
             }
         }
         &:nth-child(2){

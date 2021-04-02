@@ -22,4 +22,19 @@ window.onload = function () {
         document.body.classList.add('loaded_hiding')},1000)},1000);},2500)
     }, 2000);
      
+    $('#collection').click(e =>{ 
+        e.preventDefault();
+        if($('.collection').hasClass('collection--active')){
+            $('.collection').removeClass('collection--active');
+            $('.collection__wrapper').removeClass('wrapper--active');
+            $('.left__list').removeClass('list--active');
+            $('.collection__right').removeClass('right--active');
+        } else{
+        $('.collection').addClass('collection--active');
+        $('.collection__wrapper').addClass('wrapper--active');
+        $('.left__list').addClass('list--active');
+        $('.collection__right').addClass('right--active');
+        }
+    });
+    
   }

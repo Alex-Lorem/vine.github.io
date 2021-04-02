@@ -33,13 +33,14 @@ header{
     }
     
     &:hover{
-        border-color: #99862A;
-        border-left-style: hidden;
-        border-right-style: solid;
-        border-right-color: #fff;
-        &:nth-child(1){
-            border-left-style: solid;
-            border-left-color: #fff;
+        border-color: grey;
+        //border-right-color: #fff;
+        &:nth-child(n+1){
+            border-left-style: hidden;
+            
+        }
+        &:nth-child(n-1){
+            border-right-style: hidden;
         }
     }
 }
