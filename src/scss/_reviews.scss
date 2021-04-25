@@ -1,7 +1,12 @@
 .reviews{
     background: #E6E3C4;
-    min-height: 750px;
+    min-height: 700px;
     padding: 0 110px;
+    padding-bottom: 50px;
+    @include tablets{
+        padding: 0 15px;
+        padding-bottom: 50px;
+    }
     h2{
         color: #282828;
         text-transform: uppercase;
@@ -22,6 +27,8 @@
     flex-direction: row;
     align-items: center;
     margin: 0 auto;
+    @include tablets{border-width: 0.134rem; }
+    @include phones{border-width: 0.143rem;}
     
 }
 .reviews__wrapper{
@@ -32,8 +39,8 @@
     padding: 15px;
     @media(max-width:900px){
         flex-direction: column;
-        
     }
+    
 }
 .reviews__img{
     object-fit: cover;
@@ -50,6 +57,8 @@
     @media(max-width:900px){
         width: 100%;
     }
+    @include tablets{border-width: 0.134rem; }
+    @include phones{border-width: 0.143rem;}
 }
 .img__wrapper{
     width: 250px;
@@ -62,6 +71,8 @@
         margin-right: 0;
         margin-bottom: 30px;
     }
+    @include tablets{border-width: 0.134rem; }
+    @include phones{border-width: 0.143rem;}
 }
 .text__date{
     font-family: cursive;
@@ -97,12 +108,17 @@
     width: 64px;
     line-height: 0rem;
     font-size: 0rem;
+    z-index: 1;
     top: 47%;
     cursor: pointer;
+    @include tablets{width: 4.266rem;height: 4.266rem; top:auto; bottom: -75px;}
+    @include phones{}
 }
 .slick-prev{
     left: -80px;
     background: url('./img/arrow.png');
+    @include tablets{left: 95px;}
+    @include phones{}
     &:before{
         content: "";
         position: absolute;
@@ -128,6 +144,7 @@
     right: -80px;
     background: url('./img/arrow.png');
     transform: rotate(180deg);
+    @include tablets{right: 95px;}
     &:before{
         content: "";
         position: absolute;
@@ -176,8 +193,8 @@
 .slick-dots
 {
     position: absolute;
-    bottom: -40px;
-
+    bottom: -55px;
+    z-index: 0;
     display: block;
 
     width: 100%;

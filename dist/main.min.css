@@ -148,7 +148,7 @@
 
 .right__wrapper {
   overflow: hidden;
-  transition: all 1.5s linear;
+  transition: all 1.5s ease;
   max-height: 14.25rem;
   max-width: 15.9375rem;
   align-self: flex-end;
@@ -259,14 +259,14 @@
 
 .left__list {
   width: 100%;
-  max-height: 13.75rem;
+  height: 13.75rem;
   overflow: hidden;
-  transition: all 1.5s linear; }
+  transition: all 1.5s ease; }
   .left__list .left__text, .left__list .left__text--bottom {
     margin-top: 1.875rem; }
 
 .list--active {
-  max-height: 56.25rem; }
+  height: 35.45rem; }
 
 .__select {
   position: relative;
@@ -758,12 +758,17 @@ svg {
 
 .reviews {
   background: #E6E3C4;
-  min-height: 46.875rem;
+  min-height: 43.75rem;
   padding: 0 6.875rem;
+  padding-bottom: 3.125rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; }
+  @media screen and (max-width: 48em){
+    .reviews {
+      padding: 0 0.9375rem;
+      padding-bottom: 3.125rem; } }
   .reviews h2 {
     color: #282828;
     text-transform: uppercase;
@@ -779,6 +784,12 @@ svg {
   flex-direction: row;
   align-items: center;
   margin: 0 auto; }
+  @media screen and (max-width: 48em){
+    .reviews__container {
+      border-width: 0.134rem; } }
+  @media screen and (max-width: 30em){
+    .reviews__container {
+      border-width: 0.143rem; } }
 
 .reviews__wrapper {
   display: flex;
@@ -805,6 +816,12 @@ svg {
   @media (max-width: 56.25em){
     .reviews__text {
       width: 100%; } }
+  @media screen and (max-width: 48em){
+    .reviews__text {
+      border-width: 0.134rem; } }
+  @media screen and (max-width: 30em){
+    .reviews__text {
+      border-width: 0.143rem; } }
 
 .img__wrapper {
   width: 15.625rem;
@@ -817,6 +834,12 @@ svg {
     .img__wrapper {
       margin-right: 0;
       margin-bottom: 1.875rem; } }
+  @media screen and (max-width: 48em){
+    .img__wrapper {
+      border-width: 0.134rem; } }
+  @media screen and (max-width: 30em){
+    .img__wrapper {
+      border-width: 0.143rem; } }
 
 .text__date {
   font-family: cursive;
@@ -851,12 +874,22 @@ svg {
   width: 4rem;
   line-height: 0rem;
   font-size: 0rem;
+  z-index: 1;
   top: 47%;
   cursor: pointer; }
+  @media screen and (max-width: 48em){
+    .slick-arrow {
+      width: 4.266rem;
+      height: 4.266rem;
+      top: auto;
+      bottom: -75px; } }
 
 .slick-prev {
   left: -80px;
   background: url("./img/arrow.png"); }
+  @media screen and (max-width: 48em){
+    .slick-prev {
+      left: 5.9375rem; } }
   .slick-prev:before {
     content: "";
     position: absolute;
@@ -877,6 +910,9 @@ svg {
   right: -80px;
   background: url("./img/arrow.png");
   transform: rotate(180deg); }
+  @media screen and (max-width: 48em){
+    .slick-next {
+      right: 5.9375rem; } }
   .slick-next:before {
     content: "";
     position: absolute;
@@ -910,7 +946,8 @@ svg {
 
 .slick-dots {
   position: absolute;
-  bottom: -40px;
+  bottom: -55px;
+  z-index: 0;
   display: block;
   width: 100%;
   padding: 0;
