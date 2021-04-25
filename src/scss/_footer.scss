@@ -1,0 +1,108 @@
+footer{
+    background: #998431;
+    height: 220px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer__content{
+    max-width: 1100px;
+    width: 100%;
+    height: 120px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+.upper__item{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 2px;
+    justify-content: center;
+    &:hover{
+        font-size: 1.05rem;
+    }
+}
+.footer__upper{
+    display: flex;
+    max-width: 1000px;
+    height: 50%;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include tablets{
+        //padding: 0 2.66rem;
+    }
+    @inclued phones{
+        //padding: 0 2.857rem;
+    }
+}
+.footer__lower{
+    width: 100%;
+    height: 50%;
+    border-top: 1px solid #fff;
+    padding: 0 20px;
+}
+.footer__lower--inner{
+    @extend .footer__upper;
+    font-family: 'Mont-600';
+    height: 100%;
+    max-width: none;
+    padding-left: calc(52% - 496px);
+    
+    margin: 0 auto;
+    
+}
+.lower__item{
+    
+    &:nth-child(4){
+        border: none;
+    }
+    &:hover{
+        font-size: 1.05rem;
+    }
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 2px;
+    border-right: 1px solid #fff;
+    font-family: "Mont-600";
+}
+.lower__icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid #fff;
+    a{
+        height: 26px;
+        width: 26px;
+    }
+}
+.lower__icon{
+       margin-right: 15px;
+    &:nth-child(3){
+        margin: 0;
+    }
+}
+.yt {
+    &:hover{
+        fill:red;  
+    }
+}
+.vk{
+    &:hover{
+        fill:#3d65ad;  
+    }
+}
+.fb{
+    
+}

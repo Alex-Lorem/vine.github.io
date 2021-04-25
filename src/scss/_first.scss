@@ -16,7 +16,11 @@
                 .button--active-1{
                     animation-name: icons-anim-2;
                     animation-duration: .4s;
-                    right: 6px;}
+                    right: 6px;
+                    @include tablets{
+                        animation-name: none;
+                    }    
+                }
             }
             .button--active-1{
             
@@ -29,7 +33,6 @@
                 position: absolute;
                 top: 14px;
                 right: -70px;
-                
                 }
             @keyframes icons-anim-2{
                 0%{right: -70px;}
@@ -44,6 +47,7 @@
                     animation: icons-anim-1;
                     animation-duration: .4s;
                     left: 10px;
+                    
                     }
             }
             .button--active-2{   

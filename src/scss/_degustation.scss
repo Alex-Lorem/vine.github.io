@@ -1,4 +1,246 @@
+///
+.__select {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  
+
+  &[data-state="active"] {
+    .__select__title {
+      &::before {
+        transform: translate(-3px, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(3px, -50%) rotate(45deg);
+      }
+    }
+    
+    .__select__content {
+      opacity: 1;
+    }
+    
+    .__select__label + .__select__input + .__select__label {
+      height: 40px;
+      border-top-width: 1px;
+    }
+  }
+}
+.__select__title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  border-bottom: solid 1px #fff;
+  
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    display: block;
+    width: 10px;
+    height: 2px;
+
+    transition: all 0.3s ease-out;
+
+    background-color: #fff;
+
+    transform: translate(-3px, -50%) rotate(45deg);
+  }
+  &::after {
+    transform: translate(3px, -50%) rotate(-45deg);
+  }
+
+}
+.__select__content {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+
+  background-color: #ffffff;
+
+  border: 1px solid #fff;
+  border-top: none;
+  
+  transition: all 0.3s ease-out;
+
+  opacity: 0;
+  z-index: 8;
+}
+.__select__input {
+  display: none;
+
+  &:checked + label {
+    background-color: #dedede;
+  }
+  &:disabled + label {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+.__select__label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 0px;
+  
+  padding: 0 16px;
+  
+  transition: all 0.2s ease-out;
+
+  cursor: pointer;
+  
+  overflow: hidden;
+
+  & + input + & {
+    border-top: 0 solid #C7CCD160;
+  }
+
+  &:hover {
+    background-color: #282828;
+
+    color: #ffffff;
+  }
+}
 .degustation{
-    height: 80vh;
+    height: 780px;
     background: #282828;
+    padding: 0;
+    position: relative;
+    .strip{
+        border-color: #c4c4c4;
+    }
+    h2{
+        z-index: 10;
+        position: absolute;
+        top: 83px;
+        width: 450px;
+        background: #282828;
+        @media (max-width:1050px){
+            width: 260px;
+            top: 55px;
+        }
+    }
+}
+.degustation__wrapper{
+    display: flex;
+    max-height: 550px;
+    height: 100%;
+    max-width: 1110px;
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto 70px;
+    border: 2px #C4C4C4 solid;
+    @media (max-width:880px){
+            border-top-style: hidden;
+        }
+}
+.degustation__img-1{
+    position: absolute;
+    left: -60px;
+    top: -90px;
+}
+.degustation__img-2{
+    position: absolute;
+    right: -70px;
+    top: -45px;
+}
+.degustation__subtitle{
+    max-width: 550px;
+    width: 57%;
+    color: #fff;
+    text-align: center;
+    margin-top: 25px;
+    line-height: 150%;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    z-index: 20;
+}
+input:-internal-autofill-selected {
+    background-color: black;
+}
+.form__wrapper{
+    max-width: 550px;
+    width: 100%;
+    height: 300px;
+}
+.form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form__flex{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 35px;
+}
+.form__block{
+    width: 48%;
+}
+.form__input{
+    outline: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-family: 'Mont-500';
+    font-size: 14px;
+    color: #fff;
+    background: transparent;
+    resize: none;
+    &::placeholder{
+        color: #fff;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+}
+.select{
+    outline: none;
+    overflow: hidden;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-family: 'Mont-500';
+    font-size: 14px;
+    color: #fff;
+    background: transparent;
+    resize: none;
+    height: 35px;
+}
+
+.form__submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 16px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+    height: 3.4rem;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all .4s ease;
+    &:hover{
+        background: #fff;
+        letter-spacing: 3px;
+        color: #282828;
+    }
 }
