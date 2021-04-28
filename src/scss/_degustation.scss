@@ -36,7 +36,9 @@
   border-bottom: solid 1px #fff;
   
   cursor: pointer;
-
+    @media(max-width:600px){
+        font-size: 13px;
+    }
   &::before,
   &::after {
     content: "";
@@ -117,6 +119,9 @@
     position: relative;
     .strip{
         border-color: #c4c4c4;
+        @include tablets{
+        display: none;
+    }
     }
     h2{
         z-index: 10;
@@ -127,7 +132,11 @@
         @media (max-width:1050px){
             width: 260px;
             top: 55px;
+            margin-left: 20px;
         }
+        @include tablets{
+        background: transparent;
+    }
     }
 }
 .degustation__wrapper{
@@ -135,6 +144,7 @@
     max-height: 550px;
     height: 100%;
     max-width: 1110px;
+    padding: 0 10px;
     width: 100%;
     position: relative;
     flex-direction: column;
@@ -150,11 +160,24 @@
     position: absolute;
     left: -60px;
     top: -90px;
+    @include tablets{
+        width: 200px;
+    }
+    @media(max-width:600px){
+        width: 150px;
+    }
 }
 .degustation__img-2{
     position: absolute;
     right: -70px;
     top: -45px;
+    @include tablets{
+        width: 200px;
+        top: -60px;
+    }
+    @media(max-width:600px){
+        width: 150px;
+    }
 }
 .degustation__subtitle{
     max-width: 550px;
@@ -166,6 +189,10 @@
     font-size: 16px;
     letter-spacing: 0.12em;
     z-index: 20;
+    @include tablets{
+        width: auto;
+        margin-top: 75px;
+    }
 }
 input:-internal-autofill-selected {
     background-color: black;
