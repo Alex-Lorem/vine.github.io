@@ -141,7 +141,8 @@
     .collection__right {
       width: 100%;
       margin: 0;
-      display: flex; } }
+      display: flex;
+      justify-content: space-evenly; } }
 
 .right__item {
   animation-name: scaling;
@@ -542,7 +543,8 @@ input:-internal-autofill-selected {
 .first {
   background: url(./img/background.png);
   width: 100%;
-  height: 100vh;
+  height: 90vh;
+  position: relative;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -743,6 +745,7 @@ footer {
 
 header {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;

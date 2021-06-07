@@ -6,25 +6,26 @@ window.onload = function () {
     let marginItem = parseInt($('#rw3').css('margin-top'));
     let heightItem = parseInt($('#rw3').css('height'));
     let window_Width = window.innerWidth ? window.innerWidth : $(window).width();
+    let w = window.innerWidth;
     
-    window.setTimeout(function () {
-         
-        var w = 0,
-        t = setInterval(function() {
-                w = w + 1;
-                inner.textContent = w+'%';
-
-                if (w === 100){
-                    clearInterval(t);
-                }
-            }, 20);
-      wine_moving.classList.add('moving');
-    
-      window.setTimeout(function () {square_falling.classList.add('falling');
-       window.setTimeout(function () {document.body.classList.add('loaded')
-        window.setTimeout(function () {
-        document.body.classList.add('loaded_hiding')},1000)},1000);},2500)
-    }, 2000);
+//    window.setTimeout(function () {
+//         
+//        var w = 0,
+//        t = setInterval(function() {
+//                w = w + 1;
+//                inner.textContent = w+'%';
+//
+//                if (w === 100){
+//                    clearInterval(t);
+//                }
+//            }, 20);
+//      wine_moving.classList.add('moving');
+//    
+//      window.setTimeout(function () {square_falling.classList.add('falling');
+//       window.setTimeout(function () {document.body.classList.add('loaded')
+//        window.setTimeout(function () {
+//        document.body.classList.add('loaded_hiding')},1000)},1000);},2500)
+//    }, 2000);
      
     $('#collection').click(e =>{ 
         e.preventDefault();
@@ -50,15 +51,11 @@ window.onload = function () {
         document.querySelector('.left__list').style.height = CollectionListHeight_active + 'px';
             
         
-        if(window_Width > 550){    
+        if(w > 550){    
+        console.log(w);
         document.querySelector('.collection__right').style.height =  
-        height + marginItem + heightItem - 3 + 'px';}
-         
-       
-            
-        
-            
-        
+        height + marginItem + heightItem - 3 + 'px'; 
+            }
         }
     });
     
@@ -107,12 +104,12 @@ for (let i = 0; i < selectSingle_labels.length; i++) {
     document.querySelector('.left__list').style.height = CollectionListHeight_default + 'px';
     
     var height = document.querySelector('.collection__left').scrollHeight;
-     if(window_Width > 550){    
+   
+     if(w > 550){    
+    console.log(w);    
     document.querySelector('.collection__right').style.height = height + 'px';}
     
-//    let div = document.createElement('div');
-//    div.className = 'right__wrapper wp1';
-//    document.querySelector('.collection__right').appendChild(div);
+
     
     
     
