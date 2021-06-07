@@ -3,7 +3,9 @@ window.onload = function () {
     let wine_moving = document.querySelector('.preloader__wine--hidden');
     let square_falling = document.querySelector('.preloader__square');
     
-    
+    let marginItem = parseInt($('#rw3').css('margin-top'));
+    let heightItem = parseInt($('#rw3').css('height'));
+    let window_Width = window.innerWidth ? window.innerWidth : $(window).width();
     
     window.setTimeout(function () {
          
@@ -31,9 +33,15 @@ window.onload = function () {
             $('.collection__wrapper').removeClass('wrapper--active');
             $('.left__list').removeClass('list--active');
             
+            
+//        if(window_Width >= 550 && window_Width <= 660){
+//            $('#rw5').removeClass('img--active');
+//         }
+            
             document.querySelector('.left__list').style.height = CollectionListHeight_default + 'px';
+            if(window_Width > 550){
             document.querySelector('.collection__right').style.height = 
-            height + 'px';
+            height + 'px';}
         } 
         else{
         $('.collection').addClass('collection--active');
@@ -42,19 +50,14 @@ window.onload = function () {
         document.querySelector('.left__list').style.height = CollectionListHeight_active + 'px';
             
         
+        if(window_Width > 550){    
         document.querySelector('.collection__right').style.height =  
-        height -
-        CollectionListHeight_default + CollectionListHeight_active + 'px';
+        height + marginItem + heightItem - 3 + 'px';}
+         
+       
+            
         
-        $('#rw4').addClass('img--active');
-        $('#rw5').addClass('img--active');
-        if (1050 > window_Width && window_Width > 660) {
-            $('#rw5').removeClass('img--active');
-        }
-        
-        if(window_Width < 660){
-            $('#rw5').addClass('img--active');
-        }
+            
         
         }
     });
@@ -104,18 +107,30 @@ for (let i = 0; i < selectSingle_labels.length; i++) {
     document.querySelector('.left__list').style.height = CollectionListHeight_default + 'px';
     
     var height = document.querySelector('.collection__left').scrollHeight;
-    document.querySelector('.collection__right').style.height = height + 'px';
+     if(window_Width > 550){    
+    document.querySelector('.collection__right').style.height = height + 'px';}
     
 //    let div = document.createElement('div');
 //    div.className = 'right__wrapper wp1';
 //    document.querySelector('.collection__right').appendChild(div);
     
+    
+    
+    if(window_Width >= 1050){
+            $('#rw5').addClass('img--active');
+        }
+        if(window_Width > 550 && window_Width <= 660){
+            $('#rw5').addClass('img--active');
+         } 
+    
+    
     $('#rw1').addClass('img--active');
     $('#rw2').addClass('img--active');
     $('#rw3').addClass('img--active');
-    let window_Width = window.innerWidth ? window.innerWidth : $(window).width();
-    if (window_Width < 660) {
-        $('#rw4').addClass('img--active');
-    }
+    $('#rw4').addClass('img--active');
+    
+    
+    
+    
     
   }

@@ -33,15 +33,9 @@ header{
     }
     
     &:hover{
-        border-color: grey;
-        //border-right-color: #fff;
-        &:nth-child(n+1){
-            border-left-style: hidden;
-            
-        }
-        &:nth-child(n-1){
-            //border-right-style: hidden;
-        }
+        border-top-color: grey;
+        border-bottom-color: grey;
+       
     }
 }
 .adress{
