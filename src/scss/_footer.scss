@@ -18,6 +18,10 @@ footer{
     @include tablets{
         height: 65px;
     }
+    @include phones{
+        height: auto;
+        border: none;
+    }
 }
 .upper__item{
     height: 100%;
@@ -56,6 +60,9 @@ footer{
     @include tablets{
         height: 100%;
     }
+    @include phones{
+        border:none;
+    }
 }
 .footer__lower--inner{
     @extend .footer__upper;
@@ -66,7 +73,9 @@ footer{
     padding-left: calc(52% - 496px);
     flex-direction: row;
     margin: 0 auto;
-    
+    @include phones{
+        flex-direction: column;
+    }
 }
 .lower__item{
     
@@ -87,6 +96,11 @@ footer{
     padding: 0 2px;
     border-right: 1px solid #fff;
     font-family: "Mont-600";
+    @include phones{
+        margin-top: 10px;
+        border: none;
+    }
+
 }
 .lower__icons{
     display: flex;
@@ -98,6 +112,10 @@ footer{
     a{
         height: 26px;
         width: 26px;
+    }
+    @include phones{
+        margin-top: 10px;
+        border: none;
     }
 }
 .lower__icon{

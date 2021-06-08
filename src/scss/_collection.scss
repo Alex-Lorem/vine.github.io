@@ -2,6 +2,9 @@
     background: #E6E3C4;
     padding-bottom: 70px;
     transition: all 1.5s ease;
+    h3{
+        margin-top: 20px;
+    }
 }
 .collection__wrapper{
     transition: all 1.5s ease;
@@ -32,25 +35,29 @@
         display: flex;
         width: 255px;
         max-width: none;
-        width: 255px;
     }
-    @media(max-width: 660px){
+    @include tablets{
+        min-width: 16rem;
+    }
+    @media(max-width: 650px){
         display: block;
         min-width: 13rem;
         
     }
+    
     @media(max-width:550px){
         width: 100%;
         margin: 0;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
     }
+    
 }
 
 .right__item{
     animation-name: scaling;
-    animation-duration: 60s;
-    animation-timing-function: ease;
+    animation-duration: 40s;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 .right__wrapper{
@@ -65,16 +72,17 @@
     @media(max-width: 1050px){
         margin-top: 22px;
     }
-//    @media(max-width:735px){
-//        
-//    }
     @media(max-width:695px){
-        margin-top: 4rem;
+        margin-top: 30px;
     }
-    @media(max-width:660px){
+    
+    @media(max-width:650px){
         margin-top: 1.7rem;
         width: 13rem; 
         height: 11.2rem;
+    }
+    @media(max-width:638px){
+    margin-top: 2rem;
     }
     @media(max-width:600px){
         margin-top: 1.7rem;
@@ -85,10 +93,27 @@
     @media(max-width:550px){
         margin: 0;
         &:nth-child(3){
-            margin-top: 1.5rem;}
+            margin-top: 20px;
+            margin-right: 20px;
+        }
         &:nth-child(4){
-            margin-top: 1.5rem;}
+            margin-top: 20px;}
     }
+    @include phones{
+     width: 10.5rem;
+     height: 9rem;
+    }
+    @media(max-width:350px){
+            width: 10rem;
+        }
+    @media(max-width:340px){
+            width: 9rem;
+            height: 8rem;
+        }
+    @media(max-width:315px){
+            width: 8rem;
+            height: 7rem;
+        }
     img{
         width: 100%;
         height: 100%;
@@ -109,13 +134,30 @@
     }    
         @media(max-width:695px){
             margin: 0;
+//            margin-top: 10px;
         }
-        @media(max-width:660px){
+        @media(max-width:650px){
             width: 13rem;
-            height: 12rem;
+            height: 11.2rem;
         }
         @media(max-width: 550px){
             height: 11.2rem;
+            margin-right: 20px;
+        }
+        @include phones{
+             width: 10.5rem;
+             height: 9rem;
+        }
+        @media(max-width:350px){
+            width: 10rem;
+        }
+        @media(max-width:340px){
+            width: 9rem;
+            height: 8rem;
+        }
+         @media(max-width:315px){
+            width: 8rem;
+            height: 7rem;
         }
     }
 }
@@ -131,7 +173,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 300px;
     margin-bottom: 20px;
     @media(max-width:550px){
         align-items: center;
@@ -151,6 +192,10 @@
         color: #282828;
         text-align: left;
         max-width: 300px;
+        margin: 30px 0;
+        @media(max-width:550px){
+            text-align: center;
+        }    
     }
     .strip{
         border-color: #282828;
@@ -170,9 +215,6 @@
     @media(max-width:550px){
         max-width: none;
         width: 90%;
-        h2{
-            text-align: center;
-        }
     }
     
 }
@@ -187,7 +229,7 @@
 .left__text--bottom{
     @extend .left__text;
     transition: all 1.5s ease;
-    margin: 40px 0;
+    margin: 32px 0;
 }
 
 .list__item{

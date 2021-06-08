@@ -43,6 +43,11 @@ window.onload = function () {
             if(window_Width > 550){
             document.querySelector('.collection__right').style.height = 
             height + 'px';}
+            if (w>650 && w<700){
+            document.querySelector('.collection__right').style.height = marginItem * 3 + heightItem * 3 + 'px';}
+            if (w>550 && w<630){
+            document.querySelector('.collection__right').style.height = marginItem * 4 + heightItem * 4 + 'px';}
+
         } 
         else{
         $('.collection').addClass('collection--active');
@@ -52,7 +57,6 @@ window.onload = function () {
             
         
         if(w > 550){    
-        console.log(w);
         document.querySelector('.collection__right').style.height =  
         height + marginItem + heightItem - 3 + 'px'; 
             }
@@ -106,9 +110,13 @@ for (let i = 0; i < selectSingle_labels.length; i++) {
     var height = document.querySelector('.collection__left').scrollHeight;
    
      if(w > 550){    
-    console.log(w);    
-    document.querySelector('.collection__right').style.height = height + 'px';}
-    
+        document.querySelector('.collection__right').style.height = height + 'px';
+     }
+    if (w>650 && w<700){
+        document.querySelector('.collection__right').style.height = marginItem * 3 + heightItem * 3 + 'px';
+    }
+    if (w>550 && w<630){
+            document.querySelector('.collection__right').style.height = marginItem * 4 + heightItem * 4 + 'px';}
 
     
     
@@ -116,7 +124,7 @@ for (let i = 0; i < selectSingle_labels.length; i++) {
     if(window_Width >= 1050){
             $('#rw5').addClass('img--active');
         }
-        if(window_Width > 550 && window_Width <= 660){
+    if(window_Width > 550 && window_Width <= 660){
             $('#rw5').addClass('img--active');
          } 
     
@@ -127,7 +135,32 @@ for (let i = 0; i < selectSingle_labels.length; i++) {
     $('#rw4').addClass('img--active');
     
     
+    //burger
     
+    
+
+
+
+ 
+
+        
+    
+ let $button = $('#burger');
+ let $overlay = $('#overlay');
+    
+$button.on('click', function(e){
+    e.preventDefault();
+    if( $button.hasClass('open') ){
+      $button.removeClass('open');
+      $overlay.removeClass('overlay--active');
+      $button.addClass('close');
+    } else {
+      $button.removeClass('close');
+      $button.addClass('open');
+      $overlay.addClass('overlay--active');
+    }
+});   
+   
     
     
   }

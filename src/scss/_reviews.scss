@@ -100,6 +100,9 @@
     font-size: 18px;
     line-height: 1.4em;
     padding: 10px;
+    @include phones{
+        font-size: 1rem;
+    }
 }
 .slick-arrow{
     position: absolute;
@@ -112,13 +115,13 @@
     top: 47%;
     cursor: pointer;
     @include tablets{width: 4.266rem;height: 4.266rem; top:auto; bottom: -75px;}
-    @include phones{}
+    @include phones{width: 4.571rem;height: 4.571rem;}
 }
 .slick-prev{
     left: -80px;
     background: url('./img/arrow.png');
     @include tablets{left: 95px;}
-    @include phones{}
+    @include phones{left: 0;}
     &:before{
         content: "";
         position: absolute;
@@ -146,6 +149,7 @@
     background: url('./img/arrow.png');
     transform: rotate(180deg);
     @include tablets{right: 95px;}
+    @include phones{right: 0;}
     &:before{
         content: "";
         position: absolute;

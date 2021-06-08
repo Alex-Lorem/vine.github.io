@@ -24,6 +24,9 @@
     .__select__label + .__select__input + .__select__label {
       height: 40px;
       border-top-width: 1px;
+        @include phones{
+            height: 3.5rem;
+        }
     }
   }
 }
@@ -34,10 +37,17 @@
   height: 100%;
   color: #fff;
   border-bottom: solid 1px #fff;
-  
+  padding-bottom: 5px;
+  padding-right: 30px;
   cursor: pointer;
     @media(max-width:600px){
-        font-size: 13px;
+        font-size: 14px;
+    }
+    @include slippers{
+          padding-right: 1px;
+      }
+    @media(max-width:300px){
+        padding-bottom: 30px;
     }
   &::before,
   &::after {
@@ -56,6 +66,9 @@
     background-color: #fff;
 
     transform: translate(-3px, -50%) rotate(45deg);
+      @include slippers{
+          top: 20%;
+      }
   }
   &::after {
     transform: translate(3px, -50%) rotate(-45deg);
@@ -136,7 +149,10 @@
         }
         @include tablets{
         background: transparent;
-    }
+        }
+        @media(max-width:430px){
+            font-size: 2rem;
+        }
     }
 }
 .degustation__wrapper{
@@ -163,8 +179,15 @@
     @include tablets{
         width: 200px;
     }
-    @media(max-width:600px){
+    @media(max-width:650px){
         width: 150px;
+    }
+    @media(max-width:440px){
+        width:  100px;
+        top: -75px;    
+    }
+    @include slippers{
+        width: 80px;
     }
 }
 .degustation__img-2{
@@ -175,8 +198,14 @@
         width: 200px;
         top: -60px;
     }
-    @media(max-width:600px){
+    @media(max-width:650px){
         width: 150px;
+    }
+    @media(max-width:440px){
+        width:  100px;
+    }
+    @include slippers{
+        width: 80px;
     }
 }
 .degustation__subtitle{
@@ -192,6 +221,9 @@
     @include tablets{
         width: auto;
         margin-top: 75px;
+    }
+    @include phones{
+        font-size: 0.9rem;
     }
 }
 input:-internal-autofill-selected {

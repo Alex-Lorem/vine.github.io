@@ -1,13 +1,19 @@
 .first{
     background: url(./img/background.png);
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     position: relative;
     background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     background-position: center; 
+    h1{
+        color: #fff;
+        letter-spacing: 2px;
+        font-size: 3rem;
+        text-align: center;
+    }
     .button{
         position: relative;
         overflow: hidden;
@@ -51,6 +57,7 @@
                     
                     }
             }
+            
             .button--active-2{   
 
                 transition: all 300ms ease;
@@ -67,19 +74,23 @@
                 0%{left: -70px;}
                 100%{left: 10px;}
             }
+            @media(max-width:550px){
+                margin: 0;
+                margin-top: 30px;
+            }
         }
         
     }
 }
+
 .first__wrapper{
-        position: relative;
+        position: absolute;
         bottom: 5%;
-        max-height: 100px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-    @include tablets{
-            position: absolute;
+    @media(max-width:550px){
+        flex-direction: column;
     }
-    }
+}
