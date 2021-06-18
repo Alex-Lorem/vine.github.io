@@ -1,5 +1,5 @@
 {
-  "name": "VINE",
+  "name": "vine",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -39,5 +39,9 @@
     "gulp-uglify": "^3.0.2",
     "imagemin-webp": "^6.0.0",
     "node-sass": "^5.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Alex-Lorem/alex.lorem.github.io/issues"
+  },
+  "homepage": "https://github.com/Alex-Lorem/alex.lorem.github.io#readme"
 }
