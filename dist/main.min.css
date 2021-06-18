@@ -1315,17 +1315,16 @@ svg {
   @media screen and (max-width: 48em){
     .cover-block-2 {
       height: 3.2rem;
-      width: 3.3rem;
-      top: -0.6rem;
-      animation: block-22 2.7s linear;
+      width: 3.33rem;
+      top: -0.666rem;
+      animation: block-22 2.6s linear;
       animation-delay: 1.15s;
-      animation-fill-mode: both;
-      animation-delay: 1.15s; }
+      animation-fill-mode: both; }
     @keyframes block-22 {
       0% {
         transform: translate3d(0px, 0rem, 0rem); }
       100% {
-        transform: translate3d(0px, -3.66rem, 0rem); } } }
+        transform: translate3d(0px, -3.666rem, 0rem); } } }
   @media screen and (max-width: 30em){
     .cover-block-2 {
       height: 3.428rem;

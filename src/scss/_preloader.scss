@@ -115,15 +115,14 @@
     }
     @include tablets{
         height: 3.2rem;
-        width: 3.3rem;
-        top: -0.6rem;
-        animation: block-22 2.7s linear;
+        width: 3.33rem;
+        top: -0.666rem;
+        animation: block-22 2.6s linear;
         animation-delay: 1.15s;
         animation-fill-mode: both;
-        animation-delay: 1.15s;
         @keyframes block-22{
         0%{transform: translate3d(0px, 0px, 0px);}
-        100%{transform: translate3d(0px, -3.66rem, 0px);}
+        100%{transform: translate3d(0px, -3.666rem, 0px);}
         }
     }
     @include phones{
@@ -133,7 +132,6 @@
         animation: block-222 2.7s linear;
         animation-delay: 1.15s;
         animation-fill-mode: both;
-        
         @keyframes block-222{
         0%{transform: translate3d(0px, 0px, 0px);}
         100%{transform: translate3d(0px, -3.92rem, 0px);}
