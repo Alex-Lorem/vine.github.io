@@ -7,6 +7,8 @@ window.onload = function () {
     let w = window.innerWidth;
     let number = document.getElementById('number');
     let numeric = 0;
+    let root = document.getElementsByTagName('html')[0];
+    
     number.textContent = numeric + '%';
     window.setTimeout(function () {
     t = setInterval(function() {
@@ -17,11 +19,15 @@ window.onload = function () {
                     clearInterval(t);
                 }
             }, 20);},1000);
+    
     window.setTimeout(function () {
       preloader.addClass('preloader-disappearance');
+      root.classList.add('overflow-disactive');
     }, 4000);
-     window.setTimeout(function () {
+    
+    window.setTimeout(function () {
          preloader.addClass('preloader-disactive');
+         
      },6000)
     $('#collection').click(e =>{ 
         e.preventDefault();

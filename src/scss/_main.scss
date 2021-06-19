@@ -8,17 +8,20 @@ $baseFamily: 'Mont-400';
     box-sizing: border-box;
     text-decoration: none;
 }
+
 html{
     font-size: $baseFont;
     font-family: $baseFamily;
     overflow-x: hidden;
+    overflow-y: hidden;
     @include tablets{
         font-size: $baseFont - 1px;
     }    
     @include phones{
         font-size: $baseFont - 2px; 
     }
-}  
+}
+.overflow-disactive{overflow-y: scroll;}
 a{
     color: #fff;
 }

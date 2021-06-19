@@ -1125,13 +1125,17 @@ header {
 html {
   font-size: 1rem;
   font-family: "Mont-400";
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  overflow-y: hidden; }
   @media screen and (max-width: 48em){
     html {
       font-size: 0.9375rem; } }
   @media screen and (max-width: 30em){
     html {
       font-size: 0.875rem; } }
+
+.overflow-disactive {
+  overflow-y: scroll; }
 
 a {
   color: #fff; }
