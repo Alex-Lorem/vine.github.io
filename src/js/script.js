@@ -20,7 +20,9 @@ window.onload = function () {
     window.setTimeout(function () {
       preloader.addClass('preloader-disappearance');
     }, 4000);
-     
+     window.setTimeout(function () {
+         preloader.addClass('preloader-disactive');
+     },6000)
     $('#collection').click(e =>{ 
         e.preventDefault();
         if($('.collection').hasClass('collection--active')){

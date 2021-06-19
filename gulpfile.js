@@ -130,7 +130,7 @@ task(
 task('build',
  series(
    'clean',
-   parallel('copy:html', "copy:svg", 'copy:img', "copy:fonts", 'styles', 'scripts'),'server')
+   parallel('copy:html', "copy:svg", 'copy:img', "copy:fonts", 'styles', 'scripts'))
 );
 
 task("default", series("clean", parallel("copy:html", "copy:svg", "copy:img", "copy:fonts", "styles", "scripts"), parallel('watch',"server")));

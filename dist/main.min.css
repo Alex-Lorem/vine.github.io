@@ -151,7 +151,7 @@
 
 .menu__link {
   color: #282828;
-  font-size: 1.2rem; }
+  font-size: 1.5rem; }
 
 @keyframes topBar_open {
   0% {
@@ -1207,9 +1207,23 @@ svg {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: #E6E3C4;
+  background: #e0e0e0;
   z-index: 1000;
   overflow: hidden; }
+
+.preloader-disappearance {
+  animation: falling 2s ease;
+  animation-fill-mode: both; }
+
+@keyframes falling {
+  0% {
+    top: 0; }
+  100% {
+    top: -150%;
+    visibility: hidden; } }
+
+.preloader-disactive {
+  display: none; }
 
 #glass {
   background: url(./img/preloader.png);
@@ -1330,7 +1344,7 @@ svg {
       height: 3.428rem;
       width: 3.571rem;
       top: -0.71rem;
-      animation: block-222 2.7s linear;
+      animation: block-222 2.69s linear;
       animation-delay: 1.15s;
       animation-fill-mode: both; }
     @keyframes block-222 {
@@ -1435,15 +1449,6 @@ svg {
   text-align: center;
   font-size: 1.875rem;
   animation: appearance 1s ease; }
-
-.preloader-disappearance {
-  animation: falling 1.5s ease;
-  animation-fill-mode: both; }
-
-@keyframes falling {
-  100% {
-    top: -100%;
-    display: none; } }
 
 .reviews {
   background: #E6E3C4;
