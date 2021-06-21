@@ -18,7 +18,7 @@ window.onload = function () {
                 if (numeric === 100){
                     clearInterval(t);
                 }
-            }, 20);},1000);
+            }, 20);}, 1000);
     
     window.setTimeout(function () {
       preloader.addClass('preloader-disappearance');
