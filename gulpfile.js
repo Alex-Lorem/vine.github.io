@@ -13,7 +13,9 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const {SRC_PATH, DIST_PATH, FONTS_PATH, IMG_PATH, STYLE_LIBS, JS_LIBS} = require('./gulp.config');
 const gulpif = require('gulp-if');
+
 const env = process.env.NODE_ENV;
+
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require("gulp-imagemin");
 const extReplace = require("gulp-ext-replace");
@@ -37,11 +39,6 @@ task("img-convert", function() {
     .pipe(dest("./dist/img"));
   return stream;
 });
-
-
-
-
-
 
 task(
     'clean',
@@ -88,7 +85,6 @@ task(
         .pipe(dest("dist"))
         .pipe(reload({ stream: true}));
 })
-
 
 task(
     'scripts',

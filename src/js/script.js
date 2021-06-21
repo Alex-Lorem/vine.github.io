@@ -11,7 +11,7 @@ window.onload = function () {
     
     number.textContent = numeric + '%';
     window.setTimeout(function () {
-    t = setInterval(function() {
+    let t = setInterval(function() {
                 numeric += 1;
                 number.textContent = numeric + '%';
 
