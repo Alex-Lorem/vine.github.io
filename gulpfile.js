@@ -4,17 +4,19 @@ const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
-const sassGlob = require('gulp-sass-glob');
+const sassGlob = require('gulp-sass-glob'); // это херня 
 const autoprefixer = require('gulp-autoprefixer');
 const px2rem = require('gulp-px2rem-converter');
-const gcmq = require('gulp-group-css-media-queries');
+
+const gcmq = require('gulp-group-css-media-queries'); // это тоже херня
+
 const cleanCSS = require('gulp-clean-css');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const {SRC_PATH, DIST_PATH, FONTS_PATH, IMG_PATH, STYLE_LIBS, JS_LIBS} = require('./gulp.config');
 const gulpif = require('gulp-if');
 
-const env = process.env.NODE_ENV;
+const env = process.env.NODE_ENV; 
 
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require("gulp-imagemin");
@@ -51,6 +53,11 @@ task(
     return src(`${SRC_PATH}/index.html`).pipe(dest('dist')).pipe(reload({ stream: true}));
 })
 task(
+    'copy:php',
+    () => {
+    return src(`${SRC_PATH}/*.php`).pipe(dest('dist')).pipe(reload({ stream: true}));
+})
+task(
     'copy:img',
     () => {
     return src(`${SRC_PATH}/img/**`).pipe(dest('dist/img'));
@@ -79,7 +86,7 @@ task(
             browsers: ["last 2 versions"],
             cascade: false
         })))
-        .pipe(gulpif(env === 'prod', gcmq()))
+        //.pipe(gulpif(env === 'prod', gcmq())) и это херня
         .pipe(gulpif(env === 'prod', cleanCSS()))
         .pipe(gulpif(env === 'dev', sourcemaps.write()))
         .pipe(dest("dist"))
@@ -117,6 +124,7 @@ task(
     'watch', () => {
     watch(STYLE_LIBS, series("styles"));
     watch(`${SRC_PATH}/index.html`, series("copy:html"));
+    watch(`${SRC_PATH}/*.php`, series("copy:php"));
     watch(`${SRC_PATH}/img/**`, series("copy:img"));
     watch(`${SRC_PATH}/*.svg`, series("copy:svg"));
     watch(FONTS_PATH, series("copy:fonts"));
@@ -126,7 +134,7 @@ task(
 task('build',
  series(
    'clean',
-   parallel('copy:html', "copy:svg", 'copy:img', "copy:fonts", 'styles', 'scripts'))
+   parallel('copy:html', "copy:svg", 'copy:img', "copy:fonts", 'styles', 'copy:php', 'scripts'), parallel("server"))
 );
 
-task("default", series("clean", parallel("copy:html", "copy:svg", "copy:img", "copy:fonts", "styles", "scripts"), parallel('watch',"server")));
+task("default", series("clean", parallel("copy:html", "copy:svg", "copy:img", "copy:fonts", "styles", 'copy:php',"scripts"), parallel('watch',"server")));
